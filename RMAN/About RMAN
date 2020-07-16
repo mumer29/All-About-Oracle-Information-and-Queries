@@ -1,0 +1,14 @@
+
+
+- Oracle Recovery Manager (RMAN) is used to perform regular backups of the Oracle
+  Database
+
+- RMAN is an Oracle utility that simplifies backing up, restoring, and
+  recovering database files. 
+
+{ DUPLICATE
+
+  Use the Recovery Manager DUPLICATE command to create a standby database from backups of your primary database.
+
+}
+

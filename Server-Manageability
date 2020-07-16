@@ -1,0 +1,28 @@
+
+database server manageability:
+  self-tuning,
+  self-diagnosing
+database
+technologies in the database kernel so that the database
+can manage itself out of the box.
+- automatically speed up execution time of a SQL and
+- to self-diagnose performance bottlenecks in slow-running systems (even high-powered clustered database environments).
+- covrs cross-tier performance diagnostics,
+- automated self-tuning for emergency situations, and
+- building data interfaces for innovative user interfaces (UIs) to empower DBAs to navigate performance data captured in the database.
+
+{ DBMS_ADVISOR etc
+
+  DBMS_ADVISOR is part of the server manageability suite of advisors, a set of
+  expert systems that identifies and helps resolve performance problems relating
+  to database server components. 
+
+  Some advisors have their own packages. For these advisors, Oracle recommends that you use the advisor-specific package rather than DBMS_ADVISOR. Each of the following advisors has its own package, tailored to its specific functionality:
+     -  Automatic Database Diagnostic Monitor (DBMS_ADDM)
+     -  SQL Performance Analyzer (DBMS_SQLPA)
+     -  SQL Repair Advisor (DBMS_SQLDIAG)
+     -  SQL Tuning Advisor (DBMS_SQLTUNE)
+     -  Compression Advisor (DBMS_COMPRESSION.GET_COMPRESSION_RATIO)
+  SQL Access Advisor and Segment Advisor are the only advisors with common use cases for DBMS_ADVISOR. Undo Advisor and Compression Advisor do not support DBMS_ADVISOR subprograms. 
+
+}

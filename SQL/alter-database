@@ -1,0 +1,12 @@
+
+alter database force logging {
+
+   create a standby redo log:
+     alter database add standby logfile ('/oracle/dbs/slog1.rdo') size 500m;
+
+}
+alter database create standby controlfile {
+
+  alter database create standby controlfile as '/tmp/boston.ctl';
+
+}

@@ -1,0 +1,8 @@
+
+The Oracle Data Guard broker is a distributed management framework that
+  • automates the creation,
+  • maintenance, and
+  • monitoring
+of Oracle Data Guard configurations.
+
+GDS is integrated with Oracle Data Guard broker.

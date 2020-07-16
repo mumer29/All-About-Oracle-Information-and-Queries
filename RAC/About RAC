@@ -1,0 +1,15 @@
+
+RAC enables multiple independent servers that are linked by an interconnect to
+share access to an Oracle database, providing
+ - high availability,
+ - scalability,
+ - and redundancy
+during failures. 
+
+RAC addresses system failures by providing rapid and automatic recovery from
+failures, such as node failures and instance crashes.
+
+{ Interconnect
+
+}
+

@@ -1,0 +1,10 @@
+Oracle GoldenGate is a comprehensive software package for real-time data
+integration and replication in heterogeneous IT environments. The product set
+enables high availability solutions, real-time data integration, transactional
+change data capture, data replication, transformations, and verification
+between operational and analytical enterprise systems. Oracle GoldenGate 12c
+brings extreme performance with simplified configuration and management,
+tighter integration with Oracle Database, support for cloud environments,
+expanded heterogeneity, and enhanced security.
+
+... Golden Gate allows to modify data in all instances.

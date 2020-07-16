@@ -1,0 +1,9 @@
+
+Oracle Global Data Services (GDS) applies the Oracle RAC service model to pools
+of globally distributed databases, providing
+- dynamic load balancing,
+- failover, and
+- centralized service management
+for a set of replicated databases that offer common services
+
+GDS is integrated with Oracle Data Guard broker.

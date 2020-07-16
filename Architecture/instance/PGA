@@ -1,0 +1,3 @@
+SQL areas
+  Multiple private SQL areas in the same or different sessions can point to a
+  single execution plan in the SGA

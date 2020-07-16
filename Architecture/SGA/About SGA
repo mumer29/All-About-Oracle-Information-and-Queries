@@ -1,0 +1,25 @@
+Flashback buffer:
+  Is an optional component in the SGA. When Flashback Database
+  is enabled, the background process called Recovery Writer Process (RVWR) is
+  started. RVWR periodically copies modified blocks from the buffer cache to the
+  flashback buffer, and sequentially writes Flashback Database data from the
+  flashback buffer to the Flashback Database logs, which are circularly reused
+
+Redo log buffer:
+  Is a circular buffer in the SGA that holds information about
+  changes made to the database. This information is stored in redo entries. Redo
+  entries contain the information necessary to reconstruct (or redo) changes that
+  are made to the database by data manipulation language (DML), data definition
+  language (DDL), or internal operations. Redo entries are used for database
+  recovery if necessary. 
+
+Memoptimize Pool:
+  Is an optional component that provides high performance and
+  scalability for keybased queries. The Memoptimize Pool contains two parts, the
+  memoptimize buffer area and the hash index. Fast lookup uses the hash index
+  structure in the memoptimize pool providing fast access to the blocks of a
+  given table (enabled for MEMOPTIMIZE FOR READ) permanently pinned in the buffer
+  cache to avoid disk I/O. The buffers in the memoptimize pool are completely
+  separate from the database buffer cache. The hash index is created when the
+  Memoptimized Rowstore is configured, and is maintained automatically by Oracle
+  Database. 

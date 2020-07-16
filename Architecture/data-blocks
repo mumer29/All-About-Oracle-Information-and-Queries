@@ -1,0 +1,1 @@
+The OLAP pool manages OLAP data pages, which are equivalent to data blocks. 

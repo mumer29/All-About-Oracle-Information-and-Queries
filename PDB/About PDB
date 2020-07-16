@@ -1,0 +1,9 @@
+PDB = Pluggable Database.
+
+{ unplug / drop
+
+  Operations:
+    - unplug
+    - drop
+
+}

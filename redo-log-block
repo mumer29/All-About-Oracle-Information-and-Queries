@@ -1,0 +1,10 @@
+ORA-00354: corrupt redo log block header
+
+    Cause: The block header on the redo block indicated by the accompanying
+    error, is not reasonable.
+
+    Action: Do recovery with a good version of the log or do time based
+    recovery up to the indicated time. If this happens when archiving,
+    archiving of the problem log can be skipped by clearing the log with the
+    UNARCHIVED option. This must be followed by a backup of every datafile to
+    insure recoverability of the database.

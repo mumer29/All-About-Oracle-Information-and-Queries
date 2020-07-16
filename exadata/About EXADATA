@@ -1,0 +1,6 @@
+performance enhancing Exadata features:
+  - smart flash cache
+  - automatic columnar format in flash cache
+  - smart scan
+  - Exafusion communication over the super-fast InfiniBand network
+  - automatic storage indexes. 

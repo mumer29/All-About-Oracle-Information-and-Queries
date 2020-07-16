@@ -1,0 +1,14 @@
+
+
+EM CC is a web-based interface for viewing, monitoring, and administering
+primary and standby databases in an Oracle Data Guard configuration
+
+Enterprise Manager Cloud Control automates and simplifies:
+ - Creating a physical or logical standby database from a backup copy of the primary database
+ - Adding new or existing standby databases to an existing Oracle Data Guard configuration
+ - Monitoring 
+   - log apply rates,
+   - capturing diagnostic information,
+   - and detecting problems quickly
+   with centralized monitoring, testing, and performance tools
+

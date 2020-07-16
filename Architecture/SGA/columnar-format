@@ -1,0 +1,13 @@
+
+
+
+ This format enables scans, joins, and aggregates to perform much faster than
+ the traditional on-disk format, thus providing fast reporting and DML
+ performance for both OLTP and DW environments. This feature is particularly
+ useful for analytic applications that operate on a few columns returning many
+ rows rather than for OLTP, which operates on a few rows returning many
+ columns. 
+
+ Stored in the In-Memory Area (an optional component that enables objects
+ (tables, partitions, and other types) to be stored in memory in a new format
+ known as the columnar format)

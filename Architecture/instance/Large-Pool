@@ -1,0 +1,17 @@
+Deferred Inserts Pool:
+  The fast ingest feature enables high-frequency, single-row data inserts into
+  database for tables defined as MEMOPTIMIZE FOR WRITE. The inserts by fast
+  ingest are also known as deferred inserts. They are initially buffered in the
+  large pool and later written to disk asynchronously by the Space Management
+  Coordinator (SMCO) and Wxxx slave background processes after 1MB worth of
+  writes per session per object or after 60 seconds. Any data buffered in this
+  pool, even committed, cannot be read by any session, including the writer,
+  until the SMCO background process sweeps. The pool is initialized in the
+  large pool at the first inserted row of a memoptimized table. 2G is allocated
+  from the large pool when there is enough space. If there is not enough space
+  in the large pool, an ORA4031 is internally discovered and automatically
+  cleared. The allocation is retried with half the requested size. If there is
+  still not enough space in the large pool, the allocation is retried with 512M
+  and 256M after which the feature is disabled until the instance is restarted.
+  Once the pool is initialized, the size remains static. It cannot grow or
+  shrink. 

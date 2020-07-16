@@ -1,0 +1,150 @@
+
+
+  → http://www.oracle.com/technetwork/database/features/availability/maa-096107.html
+  → https://docs.oracle.com/database/121/DGBKR/cli.htm#DGBKR495
+  → https://docs.oracle.com/database/121/SBYDB/protection.htm#SBYDB02000
+  → https://docs.oracle.com/database/121/SBYDB/rcmbackp.htm#SBYDB01500
+
+{ Benefits
+
+  - Disaster recovery, data protection, and high availability
+  - Complete data protection
+  - Efficient use of system resources
+  - Flexibility in data protection to balance availability against performance
+    requirements
+  - Automatic gap detection and resolution
+  - Centralized and simple management
+  - Integration with Oracle Database
+  - Automatic role transitions
+
+
+
+}
+{ Main difference between physical and logical standby databases
+
+  The main difference between physical and logical standby databases is the manner in which apply services apply the archived redo data:
+
+  - For physical standby databases, Oracle Data Guard uses REDO APPLY
+    technology, which applies redo data on the standby database using standard
+    recovery techniques 
+
+  - For logical standby databases, Oracle Data Guard uses SQL APPLY technology,
+    which first transforms the received redo data into SQL statements and then
+    executes the generated SQL statements on the logical standby database,
+
+}
+{ Redo transport services
+
+  Authentication, either
+    • SSL
+        Prerequiesites
+          - DBs members of same OID (Oracle Internet Directory) enterprise domain
+          - The LOG_ARCHIVE_DEST_n, and FAL_SERVER database initialization parameters that
+            correspond to the databases use Oracle Net connect descriptors configured for SSL
+          - Each database has an Oracle wallet or supported hardware security module that
+            contains a user certificate with a distinguished name (DN) that matches the DN in
+            the OID entry for the database
+    • or remote password file
+
+}
+{ Application continuity
+
+  Application Continuity is an Oracle Database feature that enables rapid and
+  nondisruptive replays of requests against the database after a recoverable
+  error that made the database session unavailable.
+
+  Application Continuity is supported for Oracle Data Guard switchovers to
+  physical standby databases. It is also supported for fast-start failover to
+  physical standbys in maximum availability data protection mode. Note that
+  primary and standby databases must be licensed for Oracle RAC or Oracle
+  Active Data Guard in order to use Application Continuity.
+  
+
+}
+{ Redo / SQL Apply
+
+  Redo Apply: applies redo data on the standby database using standard recovery techniques 
+
+  SQL Apply: first transforms the received redo data into SQL statements and then executes the generated SQL statements on the logical standby database
+
+}
+{ Switchover vs Failover
+
+  Fast-start failover {
+
+    A high availability architecture requires a fast failover capability for
+    databases and database clients.
+
+   - Oracle Data Guard Broker determines if fail over is necessary
+     and initiates the failover to the specified target standby database automaticall
+    (No need for a DBA)
+
+  }
+  { Client failover
+
+   Client failover encompasses
+    - failure notification,
+    - stale connection cleanup,
+    - and transparent reconnection to the new primary database.
+   
+   Oracle Database provides the capability to integrate database failover with
+   failover procedures that automatically redirect clients to a new primary
+   database within seconds of a database failover.
+
+    
+
+  }
+
+}
+{ Oracle Data Guard Broker
+
+  → https://docs.oracle.com/database/121/DGBKR/cli.htm#DGBKR495
+
+}
+{ Creating environment
+
+  A LOGICAL STANDBY database is initially created as an identical copy of the primary database, but it later can be altered to have a different structure. 
+
+  Create phys. or log. standby DB from backup copy of prim db.
+
+  RMAN - DUPLICATE to create a standby database from backups of your primary database.
+
+}
+{ DGMGRL - Data Guard command-line interface
+
+}
+{ Protection modes
+
+  → https://docs.oracle.com/database/121/SBYDB/protection.htm#SBYDB02000
+
+}
+{ FORCE LOGGING
+
+  To protect against unlogged direct writes in the primary database that cannot
+  be propagated to the standby database, turn on FORCE LOGGING at the primary
+  database before performing data file backups for standby creation. Keep the
+  database in FORCE LOGGING mode as long as the standby database is required
+
+}
+{ Fast-start failover target
+
+  you cannot use the SQL  
+    ALTER DATABASE MOVE DATAFILE
+  command to rename or relocate an online data file on a physical standby that
+  is a fast-start failover target if the standby is mounted, but not open.
+
+}
+{ Creating a DG environment
+
+  { Primary DB
+
+    • Enable forced logging
+      ALTER DATABASE FORCE LOGGING;
+    • Configure Redo Transport Authentication
+    • Configure the primary(?) DB to receive redo data
+    • set primary DB init params
+    • enable archiving
+
+  }
+
+}
